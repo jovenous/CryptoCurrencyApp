@@ -7,6 +7,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import com.example.cryptocurrencyapp.adapters.CoinInfoAdapter
 import com.example.cryptocurrencyapp.databinding.ActivityCoinPriceListBinding
+import com.example.cryptocurrencyapp.pojo.CoinPriceInfo
 
 class CoinPriceListActivity : AppCompatActivity() {
 
@@ -19,11 +20,17 @@ class CoinPriceListActivity : AppCompatActivity() {
         val view = binding.root
         setContentView(view)
 
-        val adapter = CoinInfoAdapter()
+        val adapter = CoinInfoAdapter(this)
+        adapter.onCoinClickListener = object : CoinInfoAdapter.OnCoinClickListener {
+            override fun onCoinClick(coinPriceInfo: CoinPriceInfo) {
+                Log.d("ON_CLICK_TEST", coinPriceInfo.fromSymbol)
+            }
+        }
         binding.recyclerViewCoinPriceList.adapter = adapter
 
         viewModel = ViewModelProvider(this)[CoinViewModel::class.java]
         viewModel.priceList.observe(this, Observer {
+            Log.d("TEST_OF_LOADING_DATA", "Success in activity: $it")
             adapter.coinInfoList = it
         })
 

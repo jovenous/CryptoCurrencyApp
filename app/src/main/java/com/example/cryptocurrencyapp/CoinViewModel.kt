@@ -30,10 +30,13 @@ class CoinViewModel(application: Application) : AndroidViewModel(application) {
 
     private fun loadData() {
         val disposable = ApiFactory.apiService.getTopCoinsInfo(limit = 50)
-            .map { it -> it.data.map { it.coinInfo.name }.joinToString(", ") }
+            .map {
+                Log.d("IN_MAP_TEST_OF_LOADING_DATA_IN_MAP", "$it")
+                it.data.map { it.coinInfo.name }.joinToString(",")
+            }
             .flatMap { ApiFactory.apiService.getFullPriceList(fSyms = it) }
             .map { getPriceListFromRawData(it) }
-            .delaySubscription(10,TimeUnit.SECONDS)
+            .delaySubscription(10, TimeUnit.SECONDS)
             .repeat()
             .retry()
             .subscribeOn(Schedulers.io())
