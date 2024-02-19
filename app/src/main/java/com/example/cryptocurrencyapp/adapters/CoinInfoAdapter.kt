@@ -41,7 +41,7 @@ class CoinInfoAdapter(private val context: Context) : Adapter<CoinInfoAdapter.Co
 
         with(holder) {
             binding.textViewSymbols.text = titleText
-            binding.textViewPrice.text = currentPrice
+            binding.textViewCurrentPrice.text = currentPrice
             binding.textViewTimeUpdating.text = lastUpdate
 
             Picasso

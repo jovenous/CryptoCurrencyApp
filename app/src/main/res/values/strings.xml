@@ -2,4 +2,10 @@
     <string name="app_name">CryptoCurrencyApp</string>
     <string name="symbols_template">%s / %s</string>
     <string name="last_update_template">Time of last update: %s</string>
+    <string name="price_label">Price:</string>
+    <string name="minimum_per_day_label">Minimum per day:</string>
+    <string name="maximum_per_day_label">Maximum per day</string>
+    <string name="the_latest_deal_label">The latest deal:</string>
+    <string name="updated_at_label">Updated at:</string>
+    <string name="slash_label">/</string>
 </resources>

@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CoinDetailActivity">
+
+    <ImageView
+        android:id="@+id/imageViewLogoCoin"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_margin="16dp"
+        android:contentDescription="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:src="@mipmap/ic_launcher" />
+
+    <TextView
+        android:id="@+id/textViewFromSymbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_purple"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@id/textViewSlash"
+        app:layout_constraintEnd_toStartOf="@id/textViewSlash"
+        app:layout_constraintTop_toTopOf="@id/textViewSlash"
+        tools:text="BTC" />
+
+    <TextView
+        android:id="@+id/textViewSlash"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/slash_label"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/imageViewLogoCoin" />
+
+    <TextView
+        android:id="@+id/textViewToSymbol"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toBottomOf="@id/textViewSlash"
+        app:layout_constraintStart_toEndOf="@id/textViewSlash"
+        app:layout_constraintTop_toTopOf="@id/textViewSlash"
+        tools:text="USD" />
+
+    <TextView
+        android:id="@+id/textViewPriceLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/price_label"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewSlash" />
+
+    <TextView
+        android:id="@+id/textViewPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/textViewPriceLabel"
+        app:layout_constraintTop_toTopOf="@id/textViewPriceLabel"
+        tools:text="50000.2" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:background="#63000000"
+        app:layout_constraintTop_toBottomOf="@id/textViewPriceLabel" />
+
+    <TextView
+        android:id="@+id/textViewMinPerDayLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/minimum_per_day_label"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewPriceLabel" />
+
+    <TextView
+        android:id="@+id/textViewMinPerDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@android:color/holo_red_light"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/textViewMinPerDayLabel"
+        app:layout_constraintTop_toTopOf="@id/textViewMinPerDayLabel"
+        tools:text="49313.0" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:background="#63000000"
+        app:layout_constraintTop_toBottomOf="@id/textViewMinPerDayLabel" />
+
+    <TextView
+        android:id="@+id/textViewMaxPerDayLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/maximum_per_day_label"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewMinPerDayLabel" />
+
+    <TextView
+        android:id="@+id/textViewMaxPerDay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@android:color/holo_green_light"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/textViewMaxPerDayLabel"
+        app:layout_constraintTop_toTopOf="@id/textViewMaxPerDayLabel"
+        tools:text="52095.22" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:background="#63000000"
+        app:layout_constraintTop_toBottomOf="@id/textViewMaxPerDayLabel" />
+
+    <TextView
+        android:id="@+id/textViewLastMarketLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/the_latest_deal_label"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewMaxPerDayLabel" />
+
+    <TextView
+        android:id="@+id/textViewLastMarket"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/textViewLastMarketLabel"
+        app:layout_constraintTop_toTopOf="@id/textViewLastMarketLabel"
+        tools:text="Binance" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:background="#63000000"
+        app:layout_constraintTop_toBottomOf="@id/textViewLastMarketLabel" />
+
+    <TextView
+        android:id="@+id/textViewLastUpdateLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/updated_at_label"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textViewLastMarketLabel" />
+
+    <TextView
+        android:id="@+id/textViewLastUpdate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toEndOf="@id/textViewLastUpdateLabel"
+        app:layout_constraintTop_toTopOf="@id/textViewLastUpdateLabel"
+        tools:text="21:05:23" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:background="#63000000"
+        app:layout_constraintTop_toBottomOf="@id/textViewLastUpdateLabel" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
